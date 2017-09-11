@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>moocha</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='reset.css') }}">
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='search.css') }}">
+    </head>
+    
+    <body>
+
+        <header>
+                <h1 class="site-title"><a href="https://en.wikipedia.org/wiki/Massive_open_online_course">moocha</a></h1>
+
+                <form action="{{ url_for('search') }}" method="get" class="search-form">
+                        <button class="search-button" type="submit"><img width=20 height=20 src="{{ url_for('static', filename='search.png') }}"></button>
+                        <input class="search-input" name="query" placeholder="Search" {% if query %}value="{{ query }}"{% endif %} type="search" required>
+                </form>
+        </header>
+        
+        <main>
+
+            {% if not error %}
+                <p class="num-results">About {{ total }} courses</p>
+            {% endif %}
+            <ul class="course-list">
+                {% for course in courses %}
+                    <li class="course">
+                        <h3 class="course-title"><a href="{{ course.url }}">{{ course.title }}</a></h3>
+
+                        <p class="course-info">
+                            {% if course.partners %}
+                                {% for partner in course.partners %}
+                                    <a href="?partner={{ partner }}">{{ partner }}{% if loop.index < loop.length %},{% endif %}</a> 
+                                {% endfor %} &mdash;
+                            {% endif %}
+                            <a href="?platform={{ course.platform }}">{{ course.platform }}</a>
+                        </p>
+                        <p class="course-description">{{ course.snippet }}</p>
+                    </li>
+                {% endfor %}
+                {% if total == 0 %}
+                    <li class="course no-results">
+                        <h3 class="course-title">No courses found</h3>
+                        <p class="course-description">Hmm. It looks like we don't have any courses matching that query. Sorry about that.</p>
+                    </li>
+                {% elif error %}
+                    <li class="course error">
+                        <h3 class="course-title">{{ error.title }}</h3>
+                        <p class="course-description">{{ error.message }}</p>
+                    </li>
+                {% endif %}
+
+            </ul>
+        
+        </main>
+
+        <nav class="pagination">
+            <ul>
+                {% for page in pages %}
+                    {% if page.selected %}
+                        <li class="page-link current-page">
+                    {% else %}
+                        <li class="page-link">
+                    {% endif %}
+                    <a href="{{ page.url }}">{{ page.num }}</a></li>
+                {% endfor %}
+            </u>
+        </nav>
+
+        <footer>
+            <section class="footer-section">
+                <p class="signature">Made by <a href="mailto:matthackstheworld@gmail.com">Matt Evenson</a></p>
+                <ul class="share">
+                    <li class="share-link"><a href="#">Github</a></li>
+                    <li class="share-link"><a href="#">Hacker News</a></li>
+                    <li class="share-link"><a href="#">Facebook</a></li>
+                    <li class="share-link"><a href="#">Twitter</a></li>
+                </ul>
+            </section>
+        </footer>
+
+    </body>
+
+</html>

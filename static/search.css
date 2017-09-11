@@ -1,0 +1,259 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+
+header {
+    height: 100px;
+    background-color: #005fe6;
+    display: flex;
+}
+
+main {
+    flex: 1;
+    margin: 0 auto;
+    padding: 10px 25px;
+}
+
+footer {
+    height: 100px;
+    border-top: 1px solid lightgray;
+    background-color: #ededed;
+    padding: 20px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #005fe6;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: blue;
+}
+
+input, button {
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.site-title {
+    font-size: 42px;
+    font-weight: 400;
+    margin: auto 20px;
+}
+
+.site-title a {
+    color: white;
+    text-decoration: none;
+}
+
+.search-form {
+    margin: auto 10%;
+    display: flex;
+    background-color: white;
+    width: 50%;
+}
+
+.search-button {
+    background-color: white;
+    width: 40px;
+    border: none;
+}
+
+.search-input {
+    height: 36px;
+    font-size: 18px;
+    color: #939393;
+    background-color: transparent;
+    border: none;
+    flex: 1;
+    padding: 5px;
+}
+
+::-webkit-input-placeholder { /* Chrome */
+    color: #939393;
+}
+
+.num-results {
+    font-weight: 400;
+    color: #939393;
+    font-size: 14px;
+    margin: 10px auto 15px auto;
+    max-width: 900px;
+    min-width: 900px;
+}
+
+.course {
+    padding: 18px 0;
+    border-bottom: 1px solid #c1c1c1;
+    max-width: 900px;
+    min-width: 900px;
+    margin: 0 auto;
+}
+
+.course:first-child {
+    padding-top: 0;
+}
+
+.course:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.course-title {
+    font-size: 18px;
+    margin-bottom: 7px;
+    font-weight: 500;
+}
+
+.course-title a {
+    color: #005fe6;
+}
+
+.course-info {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.course-info a {
+    color: black;
+    margin: 0;
+}
+
+.course-description {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #515151;
+    line-height: 1.3em;
+}
+
+.pagination {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.page-link {
+    display: inline;
+    font-size: 18px;
+}
+
+.page-link a {
+    color: black;
+    font-weight: 500;
+    padding: 0 3px;
+}
+
+.current-page a {
+    color: #0166c4;
+}
+
+.signature {
+    text-align: left;
+    flex: 1;
+}
+
+.share {
+    flex: 1;
+    text-align: right;
+}
+
+.share-link {
+    display: inline;
+    margin-left: 10px;
+}
+
+.footer-section {
+    max-width: 900px;
+    display: flex;
+    margin: 0 auto;
+}
+
+.no-results h3 {
+    font-size: 20px;
+}
+
+.error h3 {
+    font-size: 36px;
+    margin-top: 20px;
+}
+
+@media (max-width: 960px) {
+    .search-form {
+        margin: auto 5%;
+        width: 55%;
+    }
+
+    .num-results {
+        max-width: 700px;
+        min-width: 700px;
+    }
+
+    .course {
+        max-width: 700px;
+        min-width: 700px;
+    }
+
+    .footer-section {
+        max-width: 700px;
+    }
+
+}
+
+@media (max-width: 720px) {
+
+    header {
+        display: block;
+        height: 120px;
+    }
+
+    main {
+        padding: 0 20px;
+    }
+
+    .site-title {
+        font-size: 36px;
+        font-weight: 400;
+        margin: 15px;
+        text-align: center;
+    }
+
+    .search-form {
+        width: 80%;
+        margin: auto;
+    }
+
+    .num-results {
+        max-width: 600px;
+        min-width: 0px;
+    }
+
+    .course {
+        max-width: 600px;
+        min-width: 0px;
+    }
+    
+    .footer-section {
+        flex-direction: column;
+    }
+
+    .signature {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .share {
+        text-align: center;
+    }
+
+}
