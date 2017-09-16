@@ -121,4 +121,4 @@ def paginate(params, total_hits, page_num):
     return pages
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0')
