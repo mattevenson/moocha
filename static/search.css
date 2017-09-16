@@ -257,3 +257,8 @@ input, button {
     }
 
 }
+
+@viewport{
+    zoom: 1.0;
+    width: extend-to-zoom;
+}
