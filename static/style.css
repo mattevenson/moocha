@@ -15,6 +15,10 @@ main {
     flex: 1;
 }
 
+textarea:focus, input:focus{
+    outline: none;
+}
+
 *, *:before, *:after {
     box-sizing: inherit;
 }
