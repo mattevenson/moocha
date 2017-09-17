@@ -1,39 +1,16 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>moocha</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='reset.css') }}">
-        
-                <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}">
-    </head>
-
-    <body>
-        <main>
-            <section class="main-section">
-                <h1 class="site-title"><a href="#">moocha</a></h1>
-                
-                <form action="{{ url_for('search') }}" method="get" class="search-form">
-                        <button class="search-button" type="submit"><img width=20 height=20 src="{{ url_for('static', filename='search.png') }}"></button>
-                        <input class="search-input" name="query" placeholder="Search" type="search" required>
-                </form>
-
-                <p class="subtitle">Search online courses from <a href="/search?platform=edX">edX</a>, <a href="/search?platform=Coursera">Coursera</a>, <a href="/search?platform=Udacity">Udacity</a>, & more</p>
-            </section>
-        </main>
-
-        <footer>
-            <section class="footer-section">
-                    <p class="signature">Made by <a href="mailto:matthackstheworld@gmail.com">Matt Evenson</a></p>
-                    <ul class="share">
-                        <li class="share-link"><a href="#">Github</a></li>
-                        <li class="share-link"><a href="#">Hacker News</a></li>
-                        <li class="share-link"><a href="#">Facebook</a></li>
-                        <li class="share-link"><a href="#">Twitter</a></li>
-                    </ul>
-            </section>
-        </footer>
-
-    </body>
-</html>
+{% extends 'base.html' %}
+{% block page %}
+    <main class="home">
+        <div class="container">
+            <h1 class="logo"><a href="/">moocha</a></h1>
+            <form class="search" action="{{ url_for('search') }}" method="get">
+                    <input name="query" placeholder="Search" type="search" required>
+                    <button type="submit">{% include 'icon.html' %}</button>
+            </form>
+            <h3 class="slogan">Search online courses from <a href="/search?platform=edX">edX</a>, <a href="/search?platform=Coursera">Coursera</a>, <a href="/search?platform=Udacity">Udacity</a>, & more</h3>
+        </div>
+    </main>
+    <footer class="home">
+        <p class="contact">Made by <a href="mailto:matthackstheworld@gmail.com">Matt Evenson</a></p>
+    </footer>
+{% endblock %}

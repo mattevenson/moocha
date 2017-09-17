@@ -1,0 +1,176 @@
+html {
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    box-sizing: border-box;
+    color: #727272;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+li {
+    list-style-type: none;
+}
+
+a, a:visited {
+    color: #4600d3;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    background-color: #4600d3;
+    padding: 1em;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 0.5em;
+}
+
+.logo a {
+    color: white;
+    font-size: 2em;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.search {
+    background-color: white;
+    display: flex;
+}
+
+.search input, .search button {
+    background: none;
+    border: none;
+}
+
+.search input {
+    font-size: 1em;
+    padding: 0.5em;
+    flex: 1;
+}
+
+.search button {
+    flex: 0.1;
+}
+
+main {
+    padding: 0 1em;
+}
+
+.count {
+    margin: 0.5em auto;
+}
+
+.course {
+    margin: 0.8em auto;
+}
+
+.course h2 {
+    font-size: 1.1em;
+    line-height: 1.2em;
+    font-weight: bold;
+}
+
+.course h3 a{
+    color: black;
+    font-weight: 500;
+}
+
+.course h3 {
+    margin: 0.25em 0;
+}
+
+.course p {
+    line-height: 1.1em;
+}
+
+nav {
+    margin: 1.5em auto;
+}
+
+.pagination {
+    display: flex;
+    width: 14em;
+    margin: auto;
+    justify-content: center;
+}
+
+.page {
+    width: 2em;
+    border: 1px solid #4600d3;
+    border-right: none;
+    height: 2em;
+}
+
+.page:last-child {
+    border-right: 1px solid #4600d3;
+}
+
+.page a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 2em;
+    text-align: center;
+}
+
+.page-current a {
+    background-color: #4600d3;
+    color: white;
+}
+
+footer {
+    padding: 1em;
+}
+
+.contact {
+    text-align: center;
+}
+
+
+main.home {
+    background-color: #4600d3;
+    display: flex;
+}
+
+.home .container {
+    margin: auto;
+    width: 100%;
+}
+
+.home .logo {
+    font-size: 1.5em;
+}
+
+.slogan, .home .contact {
+    color: #e5e5e5;
+    text-align: center;
+    margin-top: 1em;
+    line-height: 1.2em;
+}
+
+.slogan a, footer.home .contact a {
+    color: white;
+    font-weight: 500;
+}
+
+footer.home {
+    background-color: #4600d3
+}

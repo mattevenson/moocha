@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block page %}
+<header>
+    <h1 class="logo"><a href="/">moocha</a></h1>
+    <form class='search' action="{{ url_for('search') }}" method="get">
+        <input name="query" placeholder="Search" {% if query %}value="{{ query }}"{% endif %} type="search" required>
+        <button type="submit">{% include 'icon.html' %}</button>
+    </form>
+</header>
+{% block result %}{% endblock %}
+<footer>
+    <p class="contact">Made by <a href="mailto:matthackstheworld@gmail.com">Matt Evenson</a></p>
+</footer>
+{% endblock %}
+

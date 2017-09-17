@@ -1,0 +1,34 @@
+{% extends 'result.html' %}    
+{% block result %}
+    <main class="result">
+        <p class="count">{{ total }} courses</p>
+        <ul class="courses">
+            {% for course in courses %}
+                <li>
+                    <article class='course'>
+                        <hgroup>
+                            <h2 class="title"><a target="_blank" href="{{ course.url }}">{{ course.title }}</a></h3>
+                            <h3 class="sources">
+                                {% if course.partners %}
+                                    {% for partner in course.partners %}
+                                        <a href="?partner={{ partner }}">{{ partner }}{% if loop.index < loop.length %},{% endif %}</a> 
+                                    {% endfor %} &mdash;
+                                {% endif %}
+                                <a href="?platform={{ course.platform }}">{{ course.platform }}</a>
+                            </h3>
+                        </hgroup>
+                        <p class="description">{{ course.snippet }}</p>
+                    </article>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+
+    <nav>
+        <ul class="pagination">
+            {% for page in pages %}
+                <li class="page {% if page.selected %}page-current{% endif %}"><a href="{{ page.url }}">{{ page.num }}</a></li>
+            {% endfor %}
+        </u>
+    </nav>
+{% endblock result %}
