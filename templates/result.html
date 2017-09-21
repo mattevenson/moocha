@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block page %}
-<header>
+<header class="result-header">
     <h1 class="logo"><a href="/">moocha</a></h1>
     <form class='search' action="{{ url_for('search') }}" method="get">
         <input name="query" placeholder="Search" {% if query %}value="{{ query }}"{% endif %} type="search" required>

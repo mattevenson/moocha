@@ -15,7 +15,7 @@ main {
     flex: 1;
 }
 
-textarea:focus, input:focus{
+textarea:focus, input:focus, button:focus {
     outline: none;
 }
 
@@ -28,7 +28,7 @@ li {
 }
 
 a, a:visited {
-    color: #4600d3;
+    color: #6200db;
     text-decoration: none;
 }
 
@@ -37,7 +37,7 @@ a:hover {
 }
 
 header {
-    background-color: #4600d3;
+    background-color: #6200db;
     padding: 1em;
 }
 
@@ -48,7 +48,7 @@ header {
 
 .logo a {
     color: white;
-    font-size: 2em;
+    font-size: 2.2em;
     text-decoration: none;
     font-weight: 400;
 }
@@ -60,11 +60,14 @@ header {
 
 .search input, .search button {
     background: none;
-    border: none;
+    border-width: 0;
+    -webkit-appearance: none;
+
 }
 
 .search input {
     font-size: 1em;
+    height: 2.3em;
     padding: 0.5em;
     flex: 1;
 }
@@ -88,7 +91,7 @@ main {
 .course h2 {
     font-size: 1.1em;
     line-height: 1.2em;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .course h3 a{
@@ -117,13 +120,13 @@ nav {
 
 .page {
     width: 2em;
-    border: 1px solid #4600d3;
+    border: 1px solid #6200db;
     border-right: none;
     height: 2em;
 }
 
 .page:last-child {
-    border-right: 1px solid #4600d3;
+    border-right: 1px solid #6200db;
 }
 
 .page a {
@@ -136,7 +139,7 @@ nav {
 }
 
 .page-current a {
-    background-color: #4600d3;
+    background-color: #6200db;
     color: white;
 }
 
@@ -150,7 +153,7 @@ footer {
 
 
 main.home {
-    background-color: #4600d3;
+    background-color: #6200db;
     display: flex;
 }
 
@@ -176,5 +179,60 @@ main.home {
 }
 
 footer.home {
-    background-color: #4600d3
+    background-color: #6200db
 }
+
+.error {
+    margin: 1em auto;
+    font-size: 1.25em;
+}
+
+.result {
+    margin: 0 auto;
+}
+
+.search {
+    max-width: 40em;
+}
+
+.home .search {
+    max-width: 40em;
+    margin: 0 auto;
+}
+
+@media only screen and (min-width: 40em) {
+    header {
+        height: 5.5em;
+        padding-top: 1.6em;
+    }
+
+    .result {
+        max-width: 40em;
+    }
+
+    .result-header .logo {
+        float: left;
+        margin-right: 3em;
+    }
+
+    .result-header .search {
+        margin-right: 2em;
+    }
+ }
+
+ @media only screen and (min-width: 60em) {
+    .result {
+        max-width: 55em;
+    }
+
+    .result-header .logo {
+        position: absolute;
+    }
+
+    .result-header .search {
+        margin-right: auto;
+        margin: 0 auto;
+        width: 40em;
+    }
+
+ }
