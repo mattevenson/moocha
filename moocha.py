@@ -46,7 +46,8 @@ def search():
         m = MultiMatch(query=query, 
                        fields=['title', 'description', 'tags', 'partners', 'platform'], 
                        type='most_fields', 
-                       fuzziness='AUTO')
+                       fuzziness='AUTO',
+                       minimum_should_match= "66%")
         s = s.query(m)
     
     _from = 10 * (page_num - 1)
