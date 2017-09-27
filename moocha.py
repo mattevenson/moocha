@@ -45,7 +45,7 @@ def search():
     if query:
         m = MultiMatch(query=query, 
                        fields=['title', 'description', 'tags', 'partners', 'platform'], 
-                       type='best_fields', 
+                       type='most_fields', 
                        fuzziness='AUTO',
                        minimum_should_match= "66%")
         s = s.query(m)
