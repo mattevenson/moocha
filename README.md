@@ -7,4 +7,4 @@ A search engine for Massive Open Online Courses (MOOC's)
 * Improve search results
 * Add more platforms / providers
 
-!(https://github.com/mxevenson/moocha/raw/master/screenshot_1.png)
+![Screenshot](https://github.com/mxevenson/moocha/raw/master/screenshot_1.png)
